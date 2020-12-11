@@ -1,6 +1,6 @@
 DROP TABLE IF EXISTS cocktails CASCADE;
-DROP TABLE IF EXISTS liquors CASCADE ;
-DROP TABLE IF EXISTS cocktails_liquors;
+DROP TABLE IF EXISTS liquors CASCADE;
+DROP TABLE IF EXISTS cocktails_liquors CASCADE;
 
 
 CREATE TABLE cocktails (

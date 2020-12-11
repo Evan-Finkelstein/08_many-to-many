@@ -15,10 +15,13 @@ describe('app tests', () => {
     });
 
     it('create an cocktail', async () => {
+
+
         const response = await request(app)
             .post('/cocktails')
             .send({
                 name: 'G and T',
+
 
             });
         expect(response.body).toEqual({
