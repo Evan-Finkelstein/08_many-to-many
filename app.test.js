@@ -20,12 +20,12 @@ describe('app tests', () => {
         await Promise.all([
             { type: 'vodka' },
             { type: 'cream' },
-            { type: 'kalua' }
+
         ].map(liquor => Liquor.insert(liquor)));
 
         const cocktail = await Cocktail.insert({
             name: 'white russian',
-            liquors: ['vodka', 'kalua', 'cream']
+            liquors: ['vodka', 'cream']
         });
 
         const response = await request(app)
@@ -33,7 +33,7 @@ describe('app tests', () => {
 
         expect(response.body).toEqual({
             ...cocktail,
-            liquors: ['vodka', 'kalua', 'cream']
+            liquors: ['vodka', 'cream']
         });
     });
 
