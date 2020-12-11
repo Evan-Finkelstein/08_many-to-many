@@ -14,22 +14,8 @@ describe('app tests', () => {
         return pool.end();
     });
 
-    it('create an cocktail', async () => {
 
 
-        const response = await request(app)
-            .post('/cocktails')
-            .send({
-                name: 'G and T',
-
-
-            });
-        expect(response.body).toEqual({
-            id: '1',
-            name: 'G and T',
-
-        })
-    })
     it('finds a cocktail by id via GET', async () => {
         await Promise.all([
             { type: 'vodka' },
@@ -50,6 +36,7 @@ describe('app tests', () => {
             liquors: ['vodka', 'kalua', 'cream']
         });
     });
+
 
 
     it('finds all cocktails', async () => {
