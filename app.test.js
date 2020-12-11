@@ -37,8 +37,6 @@ describe('app tests', () => {
         });
     });
 
-
-
     it('finds all cocktails', async () => {
         const cocktail = await Cocktail.insert({
             name: 'old fashioned',
@@ -81,6 +79,24 @@ describe('app tests', () => {
             .delete(`/cocktails/${cocktail.id}`);
         expect(response.body).toEqual(cocktail);
     });
+
+
+    it('create an cocktail', async () => {
+
+
+        const response = await request(app)
+            .post('/cocktails')
+            .send({
+                name: 'G and T',
+
+
+            });
+        expect(response.body).toEqual({
+            id: '1',
+            name: 'G and T',
+
+        })
+    })
 
     it('create a liquor', async () => {
 
